@@ -1,0 +1,14 @@
+<h1><%= @artist.name %></h1>
+<h2>Listed Paintings</h2>
+<ul>
+  <% @artist.paintings.each do |painting| %>
+    <li><%= link_to painting.title, painting %></li>
+  <% end %>
+</ul>
+
+<h2>On display at</h2>
+<ul>
+  <% @artist.museums.each do |museum| %>
+    <li><%= link_to museum.name, museum %></li>
+  <% end %>
+</ul>

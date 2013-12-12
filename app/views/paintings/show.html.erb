@@ -1,0 +1,7 @@
+<h1><%= @painting.title %></h1>
+<h2>Created by: <%= @painting.artist.name %></h2>
+<%= image_tag @painting.image_url %>
+<h3>Currently on display at: </h3>
+<ul>
+  <li><%= link_to @painting.museum.name, @painting.museum %></li>
+</ul>

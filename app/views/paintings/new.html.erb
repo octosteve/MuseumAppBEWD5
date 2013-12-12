@@ -1,0 +1,18 @@
+<h1>Add a painting</h1>
+<%= form_for @painting do |f| %>
+  <fieldset>
+    <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    </div>
+    <div>
+    <%= f.label :artist_id, "Select an artist" %>
+    <%= select_tag 'painting[artist_id]', options_from_collection_for_select(@artists, "id", "name")  %>
+    </div>
+    <div>
+    <%= f.label :museum_id, "Select an museum" %>
+    <%= select_tag 'painting[museum_id]', options_from_collection_for_select(@museums, "id", "name")  %>
+    </div>
+  </fieldset>
+  <%= f.submit %>
+<% end %>

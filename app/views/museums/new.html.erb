@@ -1,0 +1,8 @@
+<h1>Add a new Museum</h1>
+<%= form_for @museum do |f| %>
+  <fieldset>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </fieldset>
+  <%= f.submit %>
+<% end %>

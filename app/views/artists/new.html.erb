@@ -1,0 +1,8 @@
+<h1>New Artist</h1>
+<%= form_for @artist do |f| %>
+  <fieldset>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </fieldset>
+  <%= f.submit %>
+<% end %>

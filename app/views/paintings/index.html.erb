@@ -1,0 +1,7 @@
+<h1>Paintings</h1>
+<%= link_to "Add a painting", new_painting_path %>
+<ul>
+<% @paintings.each do |painting| %>
+  <li><%= link_to painting.title, painting %></li>
+<% end %>
+</ul>

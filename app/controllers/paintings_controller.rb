@@ -14,7 +14,7 @@ class PaintingsController < ApplicationController
   end
 
   def create
-    safe_painting = params.require(:painting).permit(:title, :artist_id, :museum_id)
+    safe_painting = params.require(:painting).permit(:title, :image_url, :artist_id, :museum_id)
     @painting = Painting.create safe_painting
     redirect_to @painting
   end

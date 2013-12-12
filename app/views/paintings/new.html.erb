@@ -6,12 +6,16 @@
     <%= f.text_field :title %>
     </div>
     <div>
+    <%= f.label :image_url %>
+    <%= f.url_field :image_url %>
+    </div>
+    <div>
     <%= f.label :artist_id, "Select an artist" %>
-    <%= select_tag 'painting[artist_id]', options_from_collection_for_select(@artists, "id", "name")  %>
+    <%= f.select :artist_id, @artists.map {|a| [a.name, a.id] } %>
     </div>
     <div>
     <%= f.label :museum_id, "Select an museum" %>
-    <%= select_tag 'painting[museum_id]', options_from_collection_for_select(@museums, "id", "name")  %>
+    <%= f.select :museum_id, @museums.map {|m| [m.name, m.id] } %>
     </div>
   </fieldset>
   <%= f.submit %>

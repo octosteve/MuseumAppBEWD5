@@ -6,7 +6,7 @@
 
 <h2>Paintings on display</h2>
 <ul>
-  <%= render @museum.paintings %>
+  <%= render @museum.paintings.uniq %>
 </ul>
 
 <%= link_to "Back to all museums", museums_path %>

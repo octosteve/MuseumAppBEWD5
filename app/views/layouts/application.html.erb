@@ -2,20 +2,37 @@
 <html>
 <head>
   <title>MuseumApp</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<% if user_signed_in? %>
-    <%= link_to "Log out",  destroy_user_session_path, method: :delete %>
-<% else %>
-    <%= link_to "Sign up", new_user_registration_path %> | <%= link_to "Sign in", new_user_session_path %>
-<% end %>
+<section class="container">
+  <header class="row">
+    <nav class="navbar navbar-default">
+      <%= link_to(image_tag('logo.png', class: 'logo'), root_path, class: 'pull-left') %>
+      <%= link_to "Artery", root_path, class: "navbar-brand" %>
+      <ul class="nav navbar-nav pull-right">
+        <% if user_signed_in? %>
+            <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </header>
 
-<%= yield %>
+  <% if notice %>
+      <p class="notice"><%= notice %></p>
+  <% end %>
 
+  <% if alert %>
+      <p class="alert"><%= alert %></p>
+  <% end %>
+
+  <%= yield %>
+</section>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 </body>
 </html>

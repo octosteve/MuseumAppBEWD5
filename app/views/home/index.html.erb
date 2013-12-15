@@ -1,12 +1,31 @@
-<h1>ArtFinder</h1>
-<h2>You place for arty things</h2>
+<div class="row">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>See your favorite paintings unpixelated</h1>
+      </div>
+      <div class="col-md-4">
+        <%= image_tag('flaming_june.jpg', class: 'img-responsive img-rounded jumbo-image') %>
+        <%= link_to "See our paintings", paintings_path, class: "btn btn-success btn-lg btn-block" %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-<%= link_to "Browse by Artist", artists_path %>
-</p>
-<p>
-<%= link_to "Browse by Painting", paintings_path %>
-</p>
-<p>
-<%= link_to "Browse by Museum", museums_path %>
-</p>
+<div class="row featured">
+  <div class="panel panel-default col-md-4">
+
+    <h2>Museum Partners</h2>
+    <%= link_to content_tag(:span, nil, class: 'glyphicon glyphicon-home'), museums_path %>
+    <!--<%= link_to "Browse by Artist", artists_path %>-->
+  </div>
+
+  <div class="panel panel-default col-md-4">
+    <h2>Artist Partners</h2>
+    <%= link_to content_tag(:span, nil, class: 'glyphicon glyphicon-glyphicon glyphicon-user'), artists_path %>
+  </div>
+  <div class="panel panel-default col-md-4">
+    <h2>Paintings</h2>
+    <%= link_to content_tag(:span, nil, class: 'glyphicon glyphicon-picture'), paintings_path %>
+  </div>
+</div>

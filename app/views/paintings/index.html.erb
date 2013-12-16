@@ -1,7 +1,18 @@
-<h1>Paintings</h1>
-<%= link_to "Add a painting", new_painting_path %>
-<ul>
-<% @paintings.each do |painting| %>
-  <li><%= link_to painting.title, painting %></li>
-<% end %>
-</ul>
+<section class="row">
+  <ol class="breadcrumb">
+    <li><%= link_to "Home", root_path %></li>
+    <li class="active">Paintings</li>
+  </ol>
+
+  <h1>Paintings</h1>
+  <div class="col-md-6">
+  <%= link_to "Add a painting", new_painting_path %>
+    <% @paintings.each do |painting| %>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <%= link_to painting.title, painting %>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</section>

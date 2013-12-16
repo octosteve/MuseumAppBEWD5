@@ -1,9 +1,30 @@
-<h1><%= @painting.title %></h1>
-<h2>Created by: <%= @painting.artist.name %></h2>
-<%= image_tag @painting.image_url %>
-<h3>Currently on display at: </h3>
-<ul>
-  <li><%= link_to @painting.museum.name, @painting.museum %></li>
-</ul>
+<section class="row">
+  <ol class="breadcrumb">
+    <li><%= link_to "Home", root_path %></li>
+    <li><%= link_to "Paintings", paintings_path %></li>
+    <li class="active"><%= @painting.title %></li>
+  </ol>
+  <h1><%= @painting.title %></h1>
 
-<%= link_to "Back to all paintings", paintings_path %>
+  <div class="col-md-6">
+    <%= image_tag @painting.image_url, class: "img-responsive" %>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel panel-heading">
+        <h2>Created by: <%= @painting.artist.name %></h2>
+      </div>
+
+      <div class="panel panel-body">
+        <h3>Currently on display at: </h3>
+        <ul class="list-unstyled">
+          <li><%= link_to @painting.museum.name, @painting.museum %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="row">
+  <%= link_to "Back to all paintings", paintings_path %>
+</div>

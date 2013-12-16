@@ -9,10 +9,17 @@
 <body>
 <section class="container">
   <header class="row">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-pills">
+      <div class="navbar-header">
       <%= link_to(image_tag('logo.png', class: 'logo'), root_path, class: 'pull-left') %>
       <%= link_to "Artery", root_path, class: "navbar-brand" %>
-      <ul class="nav navbar-nav pull-right">
+      </div>
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Museums", museums_path %></li>
+        <li><%= link_to "Artists", artists_path %></li>
+        <li><%= link_to "Paintings", paintings_path %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
             <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         <% else %>
@@ -22,7 +29,6 @@
       </ul>
     </nav>
   </header>
-
   <% if notice %>
       <p class="notice"><%= notice %></p>
   <% end %>

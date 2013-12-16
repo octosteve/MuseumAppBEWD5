@@ -1,0 +1,36 @@
+// Overrides
+$navbar-default-brand-color: #3c3c1d;
+$navbar-default-bg: #e68f3f;
+$jumbotron-bg: #ba8751;
+$body-bg: #dac19e;
+$panel-bg: #f4efdd;
+$brand-primary: #9b2d0a;
+$text-color: #491407;
+$link-color: #ba8751;
+$btn-primary-color: #f4efdd;
+$navbar-height: 70px;
+
+$breadcrumb-separator: ">";
+$breadcrumb-bg: darken($body-bg, 10);
+$breadcrumb-active-color: $text-color;
+$navbar-default-color: black;
+
+@import "bootstrap";
+
+
+.navbar-nav.navbar-right:last-child {
+  margin-right: 0;
+}
+
+.navbar-nav{
+  font-size: 2em;
+  color: white;
+}
+
+.navbar-brand{
+  font-size: 3em;
+}
+
+.navbar-header .logo {
+  height: 70px;
+}

@@ -1,7 +1,20 @@
-<h1>Museums</h1>
-<%= link_to "Add a new Museum", new_museum_path %>
-<ul>
-<% @museums.each do |museum| %>
-  <li><%= link_to museum.name, museum %></li>
-<% end %>
-</ul>
+<section class="row">
+  <ol class="breadcrumb">
+    <li><%= link_to "Home", root_path %></li>
+    <li class="active">Museums</li>
+  </ol>
+
+  <h1>Museums</h1>
+  <div class="col-md-6">
+    <%= link_to "Add a new Museum", new_museum_path %>
+    <% @museums.each do |museum| %>
+        <%= link_to museum do %>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <%= museum.name %> is currently showcasing <%= pluralize(museum.paintings.count, 'painting') %>
+              </div>
+            </div>
+        <% end %>
+    <% end %>
+  </div>
+</section>

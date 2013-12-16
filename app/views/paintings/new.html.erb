@@ -1,22 +1,26 @@
 <h1>Add a painting</h1>
-<%= form_for @painting do |f| %>
-  <fieldset>
-    <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    </div>
-    <div>
-    <%= f.label :image_url %>
-    <%= f.url_field :image_url %>
-    </div>
-    <div>
-    <%= f.label :artist_id, "Select an artist" %>
-    <%= f.select :artist_id, @artists.map {|a| [a.name, a.id] } %>
-    </div>
-    <div>
-    <%= f.label :museum_id, "Select an museum" %>
-    <%= f.select :museum_id, @museums.map {|m| [m.name, m.id] } %>
-    </div>
-  </fieldset>
-  <%= f.submit %>
-<% end %>
+<div class="row">
+  <div class="col-md-6"><%= form_for @painting do |f| %>
+        <fieldset>
+          <div class="form-group">
+            <%= f.label :title %>
+            <%= f.text_field :title, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :image_url %>
+            <%= f.url_field :image_url, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :artist_id, "Select an artist" %>
+            <%= f.collection_select :artist_id, @artists, :id,:name, {}, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :museum_id, "Select an museum" %>
+            <%= f.collection_select :museum_id, @museums, :id, :name, {}, class: 'form-control' %>
+          </div>
+        </fieldset>
+        <%= f.submit nil, class: "btn btn-primary" %>
+        <%= link_to "Back", :back, class: "btn btn-warning" %>
+    <% end %>
+  </div>
+</div>

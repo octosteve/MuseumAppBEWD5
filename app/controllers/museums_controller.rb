@@ -14,6 +14,6 @@ class MuseumsController < ApplicationController
   def create
     safe_museum = params.require(:museum).permit(:name)
     @museum = Museum.create safe_museum
-    redirect_to @museum
+    redirect_to @museum, notice: 'Museum successfully added.'
   end
 end

@@ -14,6 +14,6 @@ class ArtistsController < ApplicationController
   def create
     safe_artist = params.require(:artist).permit(:name)
     @artist = Artist.create safe_artist
-    redirect_to @artist
+    redirect_to @artist, notice: "Artist successfully added."
   end
 end
